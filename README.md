@@ -10,6 +10,12 @@ Requirements
 This role only run on elao symfony standard vagrant box. See https://vagrantcloud.com/elao/symfony-standard-debian
 
 
+Role Handlers
+-------------
+
+    postgresql server restart  # Restart PostgreSQL server
+
+
 Example Playbook
 ----------------
 
