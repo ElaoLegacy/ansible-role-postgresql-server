@@ -1,0 +1,25 @@
+---
+
+- name: repositories key
+  apt_key: >
+    url=https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    state=present
+  sudo: yes
+
+- name: repositories
+  apt_repository: >
+    repo="{{ item }}"
+    state=present
+    update_cache=yes
+  with_items:
+    - deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main
+  sudo: yes
+
+- name: packages
+  apt: >
+    name={{ item }}
+    state=present
+  with_items:
+    - postgresql-{{ elao_postgresql_version }}
+    - python-psycopg2
+  sudo: yes
