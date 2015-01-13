@@ -1,3 +1,12 @@
 ---
 
 elao_postgresql_version: 9.4
+
+elao_postgresql_users: []
+elao_postgresql_databases: []
+
+elao_postgresql_login_user:     postgres
+elao_postgresql_login_password: null
+elao_postgresql_login_host:     localhost
+
+elao_postgresql_hba_local_host_method: md5

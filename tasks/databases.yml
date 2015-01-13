@@ -1,13 +1,11 @@
 ---
 
-- name: users
-  postgresql_user: >
+- name: databases
+  postgresql_db: >
     name={{ item.name }}
-    password={{ item.password }}
-    priv={{ item.priv }}
     login_user={{ elao_postgresql_login_user }}
     login_password={{ elao_postgresql_login_password }}
     login_host={{ elao_postgresql_login_host }}
     state=present
-  with_items: elao_postgresql_users
-  when: elao_postgresql_users|length > 0
+  with_items: elao_postgresql_databases
+  when: elao_postgresql_databases|length > 0
